@@ -82,26 +82,52 @@ class Bassist(Musician):
         return "bom bom buh bom"
 
 
-class Band(Musician):
-    def __init__(self,name,members):
+# class Band(Musician):
+#     def __init__(self,name,members):
        
+#         self.name = name
+#         self.members = members
+
+#     def play_solos(self):
+#         solos = []
+#         for member in self.members:
+#             solos.append(member.play_solo())
+#         return solos
+
+#          @classmethod
+#         def to_list(self):
+#             return self.instances
+
+class Band(Musician):
+    def __init__(self, name, members):
+
         self.name = name
         self.members = members
+        Band.instances.append(self.name)
 
     def play_solos(self):
         solos = []
-        for member in Band.members:
+        for member in self.members:
             solos.append(member.play_solo())
         return solos
 
-    
+    @classmethod
+    def to_list(self):
+        return self.instances
+
+    @classmethod
+    def to_list(self):
+        return self.instances
+
+        
+    # def to_list():
+    #     pass
 
 
 # one_band = Band(
 #         "Nirvana",
 #         [Guitarist("Kurt Cobain"), Bassist("Krist Novoselic"), Drummer("Dave Grohl"),],
 #     )
-
 
 
 # solos = one_band.play_solos()
